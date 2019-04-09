@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Лабораторная работа №4.Составление программ на рекуррентные зависимости.</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<p></p>
+		<p class="text-uppercase"><b>Лабораторная работа №4.Составление программ на рекуррентные зависимости.</b></p>
+		
+		<p><b>Цель работы:</b> Составление программ на рекуррентные зависимости.</p>
+		<p><b>Теоретическая часть</b></p>
+		<p><b>Прием накопления суммы</b></p>
+		<p>Данный алгоритмический прием используется, когда надо просуммировать большое количество чисел. Для этого переменной, в которую будет записываться сумма, в начале присваивается нулевое значение, затем делается цикл, где на каждом шаге к этой переменной добавляется очередное число. (См.Исходный код программы накопления суммы)</p>
+		
+		<p><b>Прием накопления суммы</b></p>
+		<p>Аналогично накоплению суммы можно в отдельной переменной накапливать произведение. Переменной, в которой производится накопление, присваивается начальное значение 1. (См.Исходный код программы вычисление факториала.)</p>
+
+
+		<p><b>Рекуррентные соотношения: основные понятия</b></p>
+		<p>В основе рассмотренных ранее алгоритмических приемов накопления суммы и произведения лежит фундаментальная идея о том, что результат вычислений на каждом шаге цикла должен зависеть от результата вычислений на предыдущем шаге. Обобщенным математическим выражением этой идеи являются рекуррентные соотношения.</p>
+				
+		<p><b>Рекурсия</b></p>
+		<p>Рекурсия - вызов функции из самой функции. (См.Исходный код программы вычисление факториала с помощью рекурсии.)</p>
+
+		<br>
+				
+		<p><b>Практическая часть</b></p>
+		
+		<figure class="card">
+			<figcaption class="card-body text-center">Исходный код программы накопления суммы</figcaption>
+			<img class="card-img-top" src="images/lab4/lab4.1.png" alt="">
+		</figure>
+		<figure class="card">
+			<figcaption class="card-body text-center">Исходный код программы вычисление факториала c помощью цикла <strong>for</strong></figcaption>
+			<img class="card-img-top" src="images/lab4/lab4.2.png" alt="">
+		</figure>
+		<figure class="card">
+			<figcaption class="card-body text-center">Исходный код программы вычисление факториала с помощью рекурсии(рекурсивной функции)</figcaption>
+			<img class="card-img-top" src="images/lab4/lab4.3.png" alt="">
+		</figure>
+		
+	<script>
+
+	    document.ondragstart = noselect;
+
+	    document.onselectstart = noselect;
+
+	    document.oncontextmenu = noselect;
+
+	    function noselect() {return false;}
+
+	</script>
+</body>
+</html>
