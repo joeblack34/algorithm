@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Лабораторная  работа №3. Составление программ на табулирование функций.</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<p></p>
+		<p class="text-uppercase"><b>Лабораторная  работа №3. Составление программ на табулирование функций.</b></p>
+		
+		<p><b>Цель работы:</b> Составить программы на табулирование функций</p>
+		<p><b>Теоретическая часть</b></p>
+		<p>Табулирование функции — это вычисление значений функции при изменении аргумента от некоторого начального значения до некоторого конечного значения с определённым шагом. Именно так составляются таблицы значений функций, отсюда и название — табулирование.</p>
+				
+		<p><b>Функции</b></p>
+
+		<p><em>Функция</em> — это самостоятельная единица программы, которая спроектирована для реализации конкретной подзадачи. </p>
+
+		<p>Функция является подпрограммой, которая может содержаться в основной программе, а может быть создана отдельно (в библиотеке). Каждая функция выполняет в программе определенные действия.</p>
+
+		<p><em>Сигнатура</em> функции определяет правила использования функции. Обычно сигнатура представляет собой описание функции, включающее имя функции, перечень формальных параметров с их типами и тип возвращаемого значения.</p>
+
+		<p><em>Семантика</em> функции определяет способ реализации функции. Обычно представляет собой тело функции.</p>
+
+		<p><b>Определение функции</b></p>
+		<p>Каждая функция в языке Си должна быть определена, то есть должны быть указаны:
+		</p>
+		<ul>
+			<li>тип возвращаемого значения;</li>
+			<li>имя функции;</li>
+			<li>информация о формальных аргументах;</li>
+			<li>тело функции.</li>
+		</ul>
+
+		<p>Определение функции имеет следующий синтаксис:</p>
+		<pre>
+			ТипВозвращаемогоЗначения ИмяФункции(СписокФормальныхАргументов)
+			{
+			   ТелоФункции;
+			   ...
+			   return(ВозвращаемоеЗначение);
+			}	
+		</pre>
+
+		<p>Пример: Функция сложения двух вещественных чисел</p>
+		<pre>
+			float function(float x, float z) {
+			  float y;
+			  y=x+z;
+			  return(y);
+			}
+		</pre>
+
+		<p>В указанном примере возвращаемое значение имеет тип float. В качестве возвращаемого значения в вызывающую функцию передается значение переменной y. Формальными аргументами являются значения переменных x и z.</p>
+
+		<p>Если функция не возвращает значения, то тип возвращаемого значения для нее указывается как void. При этом операция return может быть опущена. Если функция не принимает аргументов, в круглых скобках также указывается void.</p>
+
+		<p>Различают <em>системные</em> (в составе систем программирования) и <em>собственные</em> функции.</p>
+
+		<p><em>Системные</em> функции хранятся в стандартных библиотеках, и пользователю не нужно вдаваться в подробности их реализации. Достаточно знать лишь их сигнатуру. Примером системных функций, используемых ранее, являются функции printf() и scanf().</p>
+
+		<p>Собственные функции - это функции, написанные пользователем для решения конкретной подзадачи.</p>
+
+		<p>Разбиение программ на функции дает следующие преимущества:</p>
+		<ul>
+			<li>Функцию можно вызвать из различных мест программы, что позволяет избежать повторения программного кода.</li>
+			<li>Одну и ту же функцию можно использовать в разных программах.</li>
+			<li>Функции повышают уровень модульности программы и облегчают ее проектирование.</li>
+			<li>Использование функций облегчает чтение и понимание программы и ускоряет поиск и исправление ошибок.</li>
+		</ul>
+
+		<p>С точки зрения вызывающей программы функцию можно представить как некий "черный ящик", у которого есть несколько входов и один выход. С точки зрения вызывающей программы неважно, каким образом производится обработка информации внутри функции. Для корректного использования функции достаточно знать лишь ее сигнатуру.
+		</p>
+
+		<p><b>Вызов функции</b></p>
+		<p>Общий вид вызова функции</p>
+		<p>Переменная = ИмяФункции(СписокФактическихАргументов);</p>
+		<p>ИмяФункции(СписокФактическихАргументов);</p>
+
+		<p><em><b>Фактический аргумент</b></em> — это величина, которая присваивается формальному аргументу при вызове функции. Таким образом, <em><b>формальный аргумент</b></em> — это переменная в вызываемой функции, а <em><b>фактический аргумент</b></em> — это конкретное значение, присвоенное этой переменной вызывающей функцией. Фактический аргумент может быть константой, переменной или выражением. Если фактический аргумент представлен в виде выражения, то его значение сначала вычисляется, а затем передается в вызываемую функцию. Если в функцию требуется передать несколько значений, то они записываются через запятую. При этом формальные параметры заменяются значениями фактических параметров в порядке их следования в сигнатуре функции.</p>
+
+		<p>Возврат в вызывающую функцию</p>
+		<p>По окончании выполнения вызываемой функции осуществляется возврат значения в точку ее вызова. Это значение присваивается переменной, тип которой должен соответствовать типу возвращаемого значения функции. Функция может передать в вызывающую программу только одно значение. Для передачи возвращаемого значения в вызывающую функцию используется оператор return в одной из форм:
+		</p>
+		<p>return(ВозвращаемоеЗначение);</p>
+		<p>return ВозвращаемоеЗначение;</p>
+		
+		<p><b>Математические функции</b></p>
+		<p>Математические функции хранятся в стандартной библиотеке math.h. Аргументы большинства математических функций имеют тип double. Возвращаемое значение также имеет тип double.</p>
+		<p>Основные математические функции стандартной библиотеки.</p>
+		<table>
+		<thead>
+		<tr>
+		<td><b>Функция</b></td>
+		<td><b>Описание</b></td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+		<td><span class='prog'><span class='kwd'>int</span> abs(<span class='kwd'>int</span> x)</span></td>
+		<td>Модуль целого числа x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> acos(<span class='kwd'>double</span> x)</span></td>
+		<td>Арккосинус x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> asin(<span class='kwd'>double</span> x)</span></td>
+		<td>Арксинус x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> atan(<span class='kwd'>double</span> x)</span></td>
+		<td>Арктангенс x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> cos(<span class='kwd'>double</span> x)</span></td>
+		<td>Косинус x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> cosh(<span class='kwd'>double</span> x)</span></td>
+		<td>Косинус гиперболический x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> exp(<span class='kwd'>double</span> x)</span></td>
+		<td>Экспонента x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> fabs(<span class='kwd'>double</span> x)</span></td>
+		<td>Модуль вещественного числа</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> fmod(<span class='kwd'>double</span> x, <span class='kwd'>double</span> y)</span></td>
+		<td>Остаток от деления x/y</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> log(<span class='kwd'>double</span> x)</span></td>
+		<td>Натуральный логарифм x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> log10(<span class='kwd'>double</span> x)</span></td>
+		<td>Десятичный логарифм x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> pow(<span class='kwd'>double</span> x, <span class='kwd'>double</span> y)</span></td>
+		<td>x в степени y</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> sin(<span class='kwd'>double</span> x)</span></td>
+		<td>Синус x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> sinh(<span class='kwd'>double</span> x)</span></td>
+		<td>Синус гиперболический x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> sqrt(<span class='kwd'>double</span> x)</span></td>
+		<td>Квадратный корень x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> tan(<span class='kwd'>double</span> x)</span></td>
+		<td>Тангенс x</td>
+		</tr>
+		<tr>
+		<td><span class='prog'><span class='kwd'>double</span> tanh(<span class='kwd'>double</span> x)</span></td>
+		<td>Тангенс гиперболический x</td>
+		</tr>
+		</tbody>
+		</table>
+
+		<br>
+				
+		<p><b>Практическая часть</b></p>
+		<figure class="card">
+			<figcaption class="card-body text-center">Исходный код программы вычисляющая сумму двух чисел</figcaption>
+			<img class="card-img-top" src="images/lab3/lab3.1.png" alt="">
+		</figure>
+		<div class="row mb-4">
+			<div class="col-md-8 m-auto">
+				<figure class="card">
+					<figcaption class="card-body text-center">Исходный код программы где тело функции сложения чисел разместилось после тела функции main</figcaption>
+					<img class="card-img-top" src="images/lab3/lab3.2.png" alt="">
+				</figure>
+			</div>
+		</div>
+		<figure class="card">
+			<figcaption class="card-body text-center">Цикл <strong>for</strong> и табулирование функции</figcaption>
+			<img class="card-img-top" src="images/lab3/lab3.3.png" alt="">
+		</figure>
+		<figure class="card">
+			<figcaption class="card-body text-center">Еще один пример табулирование функции на языке СИ</figcaption>
+			<img class="card-img-top" src="images/lab3/lab3.4.png" alt="">
+			<img class="card-img-top" src="images/lab3/lab3.5.png" alt="">
+		</figure>
+		
+	<script>
+
+	    document.ondragstart = noselect;
+
+	    document.onselectstart = noselect;
+
+	    document.oncontextmenu = noselect;
+
+	    function noselect() {return false;}
+
+	</script>
+</body>
+</html>
